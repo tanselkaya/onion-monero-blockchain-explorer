@@ -8,7 +8,7 @@
 #define PATH_SEPARARTOR '/'
 
 #define XMR_AMOUNT(value) \
-    static_cast<double>(value) / 1e12
+    static_cast<double>(value) / 1e6
 
 #define REMOVE_HASH_BRAKETS(a_hash) \
     a_hash.substr(1, a_hash.size()-2)
@@ -247,7 +247,7 @@ namespace xmreg
     static
     string
     xmr_amount_to_str(const uint64_t& xmr_amount,
-                      string _format="{:0.12f}",
+                      string _format="{:0.6f}",
                       bool zero_to_question_mark=true)
     {
         string amount_str = "?";
